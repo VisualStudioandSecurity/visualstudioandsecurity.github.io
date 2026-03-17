@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio Games | Portal</title>
+    <title>Visual Studio Games | Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,38 +42,59 @@
         <nav class="gameverse-nav">
             <div class="nav-logo">VISUAL STUDIO GAMES</div>
             <ul class="nav-links">
-                <li>DROPS</li>
-                <li>GITVERSE</li>
-                <li>VOTING</li>
-                <li>REWARDS</li>
-                <li>GIT STORE</li>
+                <li>MY GAMES</li>
+                <li>TRADING BOTS</li>
+                <li>DATABASE</li>
+                <li>SETTINGS</li>
             </ul>
-            <button class="btn-play-highlight">PLAY HUB</button>
+            <button class="btn-play-highlight">LOGOUT</button>
         </nav>
 
-        <div class="hub-content">
-            <div class="hero-section">
-                <div class="hero-text">
-                    <span class="tagline">REVOLUTIONIZING GAMING</span>
-                    <h1 class="hero-title">PLAY + <br>COLLECT</h1>
-                    <p class="hero-subtitle">WHERE GAMING MEETS THE FUTURE</p>
-                </div>
+        <div class="hub-container">
+            <header class="hub-header">
+                <span class="tagline">DEVELOPER PORTFOLIO</span>
+                <h1 class="hub-main-title">PROJECTS DRIVE</h1>
+            </header>
+
+            <div class="games-grid">
                 
-                <div class="hero-mockup">
-                    <div class="laptop-frame">
-                        <div class="screen-content">
-                            <div class="mini-grid">
-                                <div class="mini-card"></div>
-                                <div class="mini-card highlight"></div>
-                                <div class="mini-card"></div>
-                            </div>
-                        </div>
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #39FF14);">
+                        <span class="game-icon">🐍</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>SNAKE NEON</h3>
+                        <p>Classic arcade style</p>
+                        <button class="play-small" onclick="window.location.href='snake.html'">LAUNCH</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #d4008d);">
+                        <span class="game-icon">🏎️</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>DRIFT KING</h3>
+                        <p>Modified cars simulator</p>
+                        <button class="play-small">LAUNCH</button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #00d4ff);">
+                        <span class="game-icon">📉</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>TRADER SIM</h3>
+                        <p>Market strategy game</p>
+                        <button class="play-small">LAUNCH</button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #ff9900);">
+                        <span class="game-icon">🎭</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>MEME PLATFORM</h3>
+                        <p>Funny 2D Adventure</p>

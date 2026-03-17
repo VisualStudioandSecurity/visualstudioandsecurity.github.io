@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Neon | Visual Studio Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+        body { background: #050505; color: #39FF14; font-family: 'Orbitron'; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .tile { width: 120px; height: 120px; border: 2px solid #222; border-radius: 10px; cursor: pointer; transition: 0.2s; opacity: 0.3; }
+        .tile:active { transform: scale(0.95); }
+        .green { background: #39FF14; } .red { background: #ff3300; }
+        .yellow { background: #ff9900; } .blue { background: #00d4ff; }
+        .lit { opacity: 1; box-shadow: 0 0 30px currentColor; }
+        #status { margin-bottom: 10px; font-size: 1.2rem; }
+        .btn-back { margin-top: 30px; background: none; border: 1px solid #333; color: #555; padding: 10px 20px; cursor: pointer; font-family: 'Orbitron'; }
+    </style>
+</head>
+<body>
+    <div id="status">CLICK START</div>
+    <div class="grid">
+        <div class="tile green" id="0" onclick="handleTap(0)"></div>
+        <div class="tile red" id="1" onclick="handleTap(1)"></div>
+        <div class="tile yellow" id="2" onclick="handleTap(2)"></div>
+        <div class="tile blue" id="3" onclick="handleTap(3)"></div>
+    </div>
+    <button class="btn-back" id="start-btn" onclick="startGame()">START GAME</button>
+    <button class="btn-back" onclick="window.location.href='index.html'">BACK TO HUB</button>
+
+<script>
+    let sequence = [], userSequence = [], level = 0, canPlay = false;
+    const tiles = [document.getElementById('0'), document.getElementById('1'), document.getElementById('2'), document.getElementById('3')];
+
+    function startGame() {
+        sequence = []; level = 0; nextLevel();
+        document.getElementById('start-btn').style.display = 'none';
+    }
+
+    function nextLevel() {
+        userSequence = []; canPlay = false; level++;
+        document.getElementById('status').innerText = "LEVEL " + level;
+        sequence.push(Math.floor(Math.random() * 4));
+        playSequence();
+    }
+
+    async function playSequence() {
+        for (let id of sequence) {
+            await new Promise(r => setTimeout(r, 600));
+            flash(id);
+            await new Promise(r => setTimeout(r, 300));
+        }
+        canPlay = true;
+    }
+
+    function flash(id) {
+        tiles[id].classList.add('lit');
+        setTimeout(() => tiles[id].classList.remove('lit'), 300);
+    }
+
+    function handleTap(id) {
+        if (!canPlay) return;
+        flash(id);
+        userSequence.push(id);
+        if (userSequence[userSequence.length - 1] !== sequence[userSequence.length - 1]) {
+            document.getElementById('status').innerText = "GAME OVER!";
+            setTimeout(() => location.reload(), 1500);
+            return;
+        }
+        if (userSequence.length === sequence.length) {
+            canPlay = false;
+            setTimeout(nextLevel, 1000);
+        }
+    }
+</script>
+</body>
+</html>

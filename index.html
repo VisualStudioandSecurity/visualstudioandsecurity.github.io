@@ -7,66 +7,122 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         
-        /* BASE DO SITE */
+        /* Reset Total */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body { 
-            background: #000 !important; 
-            color: white; 
+            background: #000; 
+            color: #fff; 
             font-family: 'Orbitron', sans-serif; 
-            margin: 0; 
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
+            height: 100vh;
+            width: 100vw;
+            display: flex;
             justify-content: center;
+            align-items: center;
             overflow: hidden;
         }
 
-        /* TELA 1: LOGIN */
-        #login-page { 
-            text-align: center; 
-            display: flex; 
-            flex-direction: column; 
+        /* TELA DE LOGIN */
+        #login-page {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-        }
-        
-        .box { 
-            background: #0a0a0a; 
-            padding: 40px; 
-            border: 1px solid #1a1a1a; 
-            border-radius: 10px; 
-            width: 300px; 
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
-        }
-        
-        h1 { color: #39FF14; font-size: 1.1rem; margin-bottom: 25px; letter-spacing: 1px; }
-        
-        input { 
-            width: 100%; padding: 12px; margin: 8px 0; 
-            background: #000; border: 1px solid #333; color: #39FF14; 
-            border-radius: 5px; box-sizing: border-box; outline: none;
+            text-align: center;
         }
 
-        .btn-enter { 
-            width: 100%; padding: 15px; background: #39FF14; 
-            color: #000; border: none; font-weight: bold; 
-            cursor: pointer; margin-top: 10px; font-family: 'Orbitron';
-            transition: 0.3s;
+        .login-box {
+            background: #0a0a0a;
+            padding: 40px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            width: 320px;
         }
-        .btn-enter:hover { box-shadow: 0 0 15px #39FF14; }
 
-        /* TELA 2: HUB (CORRIGIDA) */
-        #hub-page { 
-            display: none; /* Começa escondido */
-            width: 90%; 
-            max-width: 1100px; 
-            height: 90vh;
-            flex-direction: column; 
-            background: #050505;
+        h1 { color: #39FF14; font-size: 1.2rem; margin-bottom: 20px; }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #000;
+            border: 1px solid #444;
+            color: #39FF14;
+            outline: none;
+        }
+
+        .btn-enter {
+            width: 100%;
+            padding: 15px;
+            background: #39FF14;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Orbitron';
+        }
+
+        /* TELA DO HUB (ESTILO LISTA PARA NÃO QUEBRAR) */
+        #hub-page {
+            display: none; /* Começa oculto */
+            width: 90%;
+            max-width: 1000px;
+            flex-direction: column;
+            height: 80vh;
+        }
+
+        .header {
+            border-bottom: 2px solid #39FF14;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #111;
+            border: 1px solid #222;
             padding: 20px;
-            box-sizing: border-box;
+            text-align: center;
         }
 
-        .header-hub {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            border-bottom: 1px solid #
+        .game-card:hover { border-color: #39FF14; }
+
+        .color-bar { height: 80px; margin-bottom: 15px; }
+
+        .btn-launch {
+            background: #39FF14;
+            color: #000;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-page">
+        <div class="login-box">
+            <h1>VISUAL STUDIO GAMES</h1>
+            <input type="text" placeholder="ID">
+            <input type="password" placeholder="PASS">
+            <button class="btn-enter" onclick="abrirHub()">ENTER SYSTEM</button>
+        </div>
+    </div>
+
+    <div id="hub-page">
+        <div class="header">
+            <span>PROJECT DRIVE</span>
+            <span style="cursor:pointer; font-size: 0.7rem;" onclick="location.reload()">[ LOGOUT ]</span>
+        </div>
+
+        <div class="grid">

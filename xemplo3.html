@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kovaliosky | High-Tech Concept</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #000; color: #fff; 
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR MINIMALISTA */
+        .nav-tech {
+            padding: 20px; text-align: center; background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        /* HERO SECTION */
+        .hero-tech {
+            height: 85vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-tech h1 {
+            font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 600;
+            background: linear-gradient(180deg, #fff 0%, #666 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; letter-spacing: -3px;
+        }
+
+        .hero-tech p {
+            font-size: 1.2rem; color: #888; max-width: 550px; margin-bottom: 40px;
+            font-weight: 300; line-height: 1.6;
+        }
+
+        /* BOTÃO ESTILO APPLE */
+        .btn-apple {
+            padding: 14px 32px; background: #fff; color: #000;
+            text-decoration: none; border-radius: 40px; font-weight: 600;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1); font-size: 1rem;
+        }
+        .btn-apple:hover { transform: scale(1.05); background: #f0f0f0; }
+
+        /* GRID DE RECURSOS */
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; padding: 80px 10%; background: #000;
+        }
+
+        .f-card {
+            background: #0a0a0a; padding: 40px; border-radius: 24px;
+            text-align: left; border: 1px solid #1a1a1a;
+            transition: 0.4s;
+        }
+        .f-card:hover { border-color: #333; transform: translateY(-5px); }
+        .f-card h2 { font-size: 1.6rem; margin-bottom: 12px; color: #fff; }
+        .f-card p { color: #86868b; font-size: 1rem; line-height: 1.5; }
+
+        .back-link { color: #fff; text-decoration: none; font-size: 0.8rem; opacity: 0.5; transition: 0.3s; }
+        .back-link:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-tech">
+        <a href="index.html" class="back-link">← VOLTAR AO HUB KOVALIOSKY</a>
+    </nav>
+
+    <section class="hero-tech">
+        <h1>O futuro é digital. <br> O design é agora.</h1>
+        <p>Desenvolvimento de Landing Pages ultravelozes e interfaces que posicionam sua marca no topo.</p>
+        <a href="https://wa.me/5569992636349" class="btn-apple">Solicitar Orçamento</a>
+    </section>
+
+    <section class="feature-grid">
+        <div class="f-card">
+            <h2>Padrão Retina</h2>
+            <p>Imagens e elementos visuais com nitidez absoluta em qualquer resolução.</p>
+        </div>
+        <div class="f-card">
+            <h2>Core Web Vitals</h2>
+            <p>Otimização máxima de performance para o Google amar seu site.</p>
+        </div>
+        <div class="f-card">
+            <h2>Estratégia UX</h2>
+            <p>Fluxos pensados para converter visitantes curiosos em clientes fiéis.</p>
+        </div>
+    </section>
+
+</body>
+</html>

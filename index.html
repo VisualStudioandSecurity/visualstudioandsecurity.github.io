@@ -1,86 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kovaliosky | Visual Designer & Dev</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body { 
-            background: #000; color: #fff; font-family: 'Orbitron', sans-serif; 
-            height: 100vh; width: 100vw; overflow: hidden;
-            position: relative;
-        }
-
-        /* ANIMAÇÃO CHROMA (RGB) */
-        @keyframes chroma {
-            0% { color: #39FF14; text-shadow: 0 0 10px #39FF14; }
-            50% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
-            100% { color: #39FF14; text-shadow: 0 0 10px #39FF14; }
-        }
-        .chroma { animation: chroma 4s infinite linear; }
-
-        .layer {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; flex-direction: column; align-items: center;
-            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        /* LOGIN */
-        #login-screen { background: #000; z-index: 999; justify-content: center; }
-        .login-box { background: #0a0a0a; padding: 40px; border: 1px solid #222; border-radius: 12px; text-align: center; width: 320px; }
-
-        /* HUB */
-        #hub-screen { background: #050505; z-index: 10; padding: 30px; justify-content: flex-start; opacity: 0; pointer-events: none; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 1100px; margin-top: 20px; }
-        .card { background: #111; border: 1px solid #222; padding: 20px; border-radius: 8px; text-align: center; }
-
-        /* PERFIL (CV) */
-        #profile-screen { 
-            background: #080808; z-index: 5; padding: 30px; justify-content: flex-start;
-            font-family: 'JetBrains Mono', monospace;
-            transform: translateX(100%);
-            overflow-y: auto;
-        }
-        .cv-container { 
-            max-width: 800px; width: 100%; background: #0c0c0c; border-left: 3px solid #00d4ff; 
-            padding: 30px; margin-top: 20px; 
-        }
-        .skill-tag { display: inline-block; padding: 5px 10px; border: 1px solid #00d4ff; color: #00d4ff; font-size: 0.7rem; margin: 5px; border-radius: 3px; }
-
-        /* BOTÕES */
-        input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: #fff; outline: none; font-family: 'Orbitron'; }
-        .btn-main { width: 100%; padding: 15px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; position: relative; }
-        .btn-main:hover { background: #39FF14; }
-        .btn-nav { background: none; border: 1px solid #444; color: #888; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; font-size: 0.7rem; }
-
-        .active-hub { opacity: 1 !important; pointer-events: auto !important; z-index: 100 !important; }
-        .active-profile { transform: translateX(0) !important; z-index: 200 !important; }
-    </style>
-</head>
-<body>
-
-    <div id="login-screen" class="layer">
-        <div class="login-box">
-            <h1 class="chroma" style="font-size: 1.1rem; margin-bottom: 25px;">Visual Studio Games</h1>
-            <input type="password" placeholder="PASSWORD">
-            <button class="btn-main" onclick="unlock()">ENTER SYSTEM</button>
-        </div>
-    </div>
-
-    <div id="hub-screen" class="layer">
-        <div style="width:100%; max-width:1100px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding-bottom:15px;">
-            <h2 class="chroma" style="font-size: 0.9rem;">DESIGN_PORTFOLIO</h2>
-            <div>
-                <button class="btn-nav" style="color:#00d4ff; border-color:#00d4ff;" onclick="openCV()">MY_PROFILE</button>
-                <button class="btn-nav" onclick="location.reload()">LOGOUT</button>
-            </div>
-        </div>
-
-        <div class="grid">
+<div class="grid">
             <div class="card"><h3>SNAKE</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./snake.html'">LAUNCH</button></div>
             <div class="card"><h3>DRIFT</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./carro.html'">LAUNCH</button></div>
             
@@ -88,54 +6,11 @@
                 <h3 style="color:#00d4ff; font-size:0.8rem;">LP_SAMPLES</h3>
                 <button class="btn-nav" style="width:100%; margin-top:10px; border-color:#39FF14; color:#39FF14;" onclick="window.location.href='./exemplo1.html'">DARK_NEON</button>
                 <button class="btn-nav" style="width:100%; margin-top:5px; border-color:#007bff; color:#007bff;" onclick="window.location.href='./exemplo2.html'">BUSINESS_CLEAN</button>
+                <button class="btn-nav" style="width:100%; margin-top:5px; border-color:#fff; color:#fff;" onclick="window.location.href='./exemplo3.html'">HIGH_TECH</button>
             </div>
             
             <div class="card" style="border: 2px solid; animation: chroma 3s infinite linear;">
                 <h3 style="font-size:0.8rem;">SITE_PROPRIO</h3>
-                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/5569992636349?text=Olá+Guilherme,+vi+seu+portfolio+e+gostaria+de+um+orçamento+para+um+site.'">HIRE_NOW</button>
+                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/5569992636349?text=Olá+Guilherme,+vi+seu+portfolio+e+gostaria+de+um+orçamento.'">HIRE_NOW</button>
             </div>
         </div>
-    </div>
-
-    <div id="profile-screen" class="layer">
-        <div style="width:100%; max-width:800px; display:flex; justify-content:space-between; align-items:center;">
-            <h2 class="chroma">Kovaliosky_Profile.exe</h2>
-            <button class="btn-nav" onclick="closeCV()">BACK_TO_HUB</button>
-        </div>
-
-        <div class="cv-container">
-            <p style="color:#fff; font-size: 1.6rem; font-weight: bold; margin-bottom: 5px;">Guilherme</p>
-            <p style="color:#00d4ff; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 25px;">[ Conhecido por Kovaliosky Dev ]</p>
-            
-            <div style="margin-bottom: 25px;">
-                <span class="skill-tag">Design_Gráfico</span>
-                <span class="skill-tag">UI/UX_Strategy</span>
-                <span class="skill-tag">Web_Systems</span>
-            </div>
-
-            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 10px;">CONTACT_INFO:</h3>
-            <p style="color:#39FF14; font-size:0.75rem; margin-bottom:5px;">> EMAIL: VisualStudio@gmail.com</p>
-            <p style="color:#39FF14; font-size:0.75rem; margin-bottom:20px;">> TEL: (69) 99263-6349</p>
-
-            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 10px; border-bottom: 1px solid #222;">EXPERIENCE:</h3>
-            <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-bottom:15px;">
-                Especialista em identidades visuais de alta performance e Landing Pages que convertem. Especialista em unir a estética Cyberpunk com a lógica de programação.
-            </p>
-
-            <div style="margin-top: 30px; display: flex; gap: 10px;">
-                <button class="btn-main" style="width:auto; padding: 12px 25px; font-size: 0.7rem;" onclick="window.location.href='https://wa.me/5569992636349?text=Olá+Guilherme,+gostaria+de+conversar+sobre+um+projeto.'">WHATSAPP_LINK</button>
-                <button class="btn-nav" style="font-size: 0.7rem;" onclick="window.location.href='mailto:VisualStudio@gmail.com'">SEND_EMAIL</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function unlock() {
-            document.getElementById('login-screen').style.display = 'none';
-            document.getElementById('hub-screen').classList.add('active-hub');
-        }
-        function openCV() { document.getElementById('profile-screen').classList.add('active-profile'); }
-        function closeCV() { document.getElementById('profile-screen').classList.remove('active-profile'); }
-    </script>
-</body>
-</html>

@@ -10,7 +10,6 @@
 
     <section id="screen-entry" class="active">
         <div class="main-container">
-            
             <div class="side-menu">
                 <button class="side-btn register">REGISTER</button>
                 <button class="side-btn wax">WAX DROPS</button>
@@ -47,7 +46,7 @@
                 <li>DATABASE</li>
                 <li>SETTINGS</li>
             </ul>
-            <button class="btn-play-highlight">LOGOUT</button>
+            <button class="btn-play-highlight" onclick="location.reload()">LOGOUT</button>
         </nav>
 
         <div class="hub-container">
@@ -74,20 +73,9 @@
                         <span class="game-icon">🏎️</span>
                     </div>
                     <div class="game-info">
-                        <h3>DRIFT KING</h3>
+                        <h3>NEON DRIFT</h3>
                         <p>Modified cars simulator</p>
-                        <button class="play-small">LAUNCH</button>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #00d4ff);">
-                        <span class="game-icon">📉</span>
-                    </div>
-                    <div class="game-info">
-                        <h3>TRADER SIM</h3>
-                        <p>Market strategy game</p>
-                        <button class="play-small">LAUNCH</button>
+                        <button class="play-small" onclick="window.location.href='carro.html'">LAUNCH</button>
                     </div>
                 </div>
 
@@ -96,5 +84,49 @@
                         <span class="game-icon">🎭</span>
                     </div>
                     <div class="game-info">
-                        <h3>MEME PLATFORM</h3>
-                        <p>Funny 2D Adventure</p>
+                        <h3>MEME JUMP</h3>
+                        <p>Physics-based platformer</p>
+                        <button class="play-small" onclick="window.location.href='meme.html'">LAUNCH</button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(45deg, #1a1a1a, #ff3300);">
+                        <span class="game-icon">🚀</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>SPACE ACE</h3>
+                        <p>Particle-based shooter</p>
+                        <button class="play-small" onclick="window.location.href='espaco.html'">LAUNCH</button>
+                    </div>
+                </div>
+
+                <div class="game-card blocked">
+                    <div class="game-img" style="background: #222;">
+                        <span class="game-icon">🎵</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>TRAP BEAT</h3>
+                        <p>Coming Soon...</p>
+                        <button class="play-small disabled">LOCKED</button>
+                    </div>
+                </div>
+
+                <div class="game-card blocked">
+                    <div class="game-img" style="background: #222;">
+                        <span class="game-icon">🧩</span>
+                    </div>
+                    <div class="game-info">
+                        <h3>MATRIX PUZZLE</h3>
+                        <p>Coming Soon...</p>
+                        <button class="play-small disabled">LOCKED</button>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

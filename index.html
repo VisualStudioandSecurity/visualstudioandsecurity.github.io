@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         
-        /* RESET E FUNDO */
         body { 
             background: #050505; 
             color: white; 
@@ -21,13 +20,7 @@
         }
 
         /* TELAS */
-        #screen-login { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            z-index: 10; 
-        }
-        
+        #screen-login { display: flex; flex-direction: column; align-items: center; z-index: 10; }
         #screen-hub { 
             display: none; 
             width: 100%; 
@@ -39,7 +32,7 @@
             background: #080808;
         }
 
-        /* CAIXA DE LOGIN */
+        /* LOGIN */
         .login-card {
             background: #111;
             border: 1px solid #333;
@@ -51,34 +44,15 @@
         }
 
         h1 { color: #39FF14; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 30px; }
-        
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background: #000;
-            border: 1px solid #444;
-            color: #39FF14;
-            border-radius: 4px;
-            outline: none;
-        }
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #444; color: #39FF14; border-radius: 4px; outline: none; }
 
         .btn-main {
-            width: 100%;
-            padding: 15px;
-            background: #39FF14;
-            color: black;
-            border: none;
-            font-family: 'Orbitron';
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: 0.3s;
+            width: 100%; padding: 15px; background: #39FF14; color: black; border: none;
+            font-family: 'Orbitron'; font-weight: bold; cursor: pointer; margin-top: 15px; transition: 0.3s;
         }
-
         .btn-main:hover { box-shadow: 0 0 20px #39FF14; transform: scale(1.02); }
 
-        /* GRID DO HUB */
+        /* HUB GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -96,30 +70,16 @@
             text-align: center;
             transition: 0.3s;
         }
-
         .card:hover { border-color: #39FF14; background: #1a1a1a; }
 
-        .preview {
-            height: 120px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
+        .preview { height: 120px; border-radius: 6px; margin-bottom: 15px; }
 
         .btn-play {
-            background: transparent;
-            border: 1px solid #39FF14;
-            color: #39FF14;
-            padding: 10px;
-            width: 100%;
-            cursor: pointer;
-            font-family: 'Orbitron';
-            font-size: 0.8rem;
-            transition: 0.3s;
+            background: transparent; border: 1px solid #39FF14; color: #39FF14;
+            padding: 10px; width: 100%; cursor: pointer; font-family: 'Orbitron';
+            font-size: 0.8rem; transition: 0.3s;
         }
-
         .btn-play:hover { background: #39FF14; color: black; }
-
-        .tagline { color: #555; font-size: 0.7rem; margin-top: 10px; display: block; }
     </style>
 </head>
 <body>
@@ -129,11 +89,3 @@
             <h1>VISUAL STUDIO GAMES</h1>
             <input type="text" placeholder="ACCESS_ID">
             <input type="password" placeholder="PASSWORD">
-            <button class="btn-main" onclick="liberarHub()">ENTER SYSTEM</button>
-            <span class="tagline">VANGUARDS VISUAL | DEV MODE</span>
-        </div>
-    </div>
-
-    <div id="screen-hub">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px;">
-            <h2 style="margin: 0;

@@ -23,7 +23,6 @@
         }
         .chroma { animation: chroma 4s infinite linear; }
 
-        /* TELAS */
         .layer {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column; align-items: center;
@@ -39,22 +38,26 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 1100px; margin-top: 20px; }
         .card { background: #111; border: 1px solid #222; padding: 20px; border-radius: 8px; text-align: center; }
 
-        /* PERFIL */
+        /* PERFIL (CV) */
         #profile-screen { 
-            background: #080808; z-index: 5; padding: 40px; justify-content: flex-start;
+            background: #080808; z-index: 5; padding: 30px; justify-content: flex-start;
             font-family: 'JetBrains Mono', monospace;
             transform: translateX(100%);
+            overflow-y: auto;
         }
-        .cv-container { max-width: 800px; width: 100%; background: #0c0c0c; border-left: 3px solid #00d4ff; padding: 30px; margin-top: 20px; }
+        .cv-container { 
+            max-width: 800px; width: 100%; background: #0c0c0c; border-left: 3px solid #00d4ff; 
+            padding: 30px; margin-top: 20px; 
+        }
         .skill-tag { display: inline-block; padding: 5px 10px; border: 1px solid #00d4ff; color: #00d4ff; font-size: 0.7rem; margin: 5px; border-radius: 3px; }
 
-        /* ELEMENTOS */
+        /* BOTÕES */
         input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: #fff; outline: none; font-family: 'Orbitron'; }
-        .btn-main { width: 100%; padding: 15px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; z-index: 1000; position: relative; }
+        .btn-main { width: 100%; padding: 15px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; position: relative; }
         .btn-main:hover { background: #39FF14; }
         .btn-nav { background: none; border: 1px solid #444; color: #888; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; font-size: 0.7rem; }
 
-        /* ESTADOS */
+        /* ESTADOS ATIVOS */
         .active-hub { opacity: 1 !important; pointer-events: auto !important; z-index: 100 !important; }
         .active-profile { transform: translateX(0) !important; z-index: 200 !important; }
     </style>
@@ -83,24 +86,75 @@
             <div class="card"><h3>DRIFT</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./carro.html'">LAUNCH</button></div>
             <div class="card"><h3>MEME</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./meme.html'">LAUNCH</button></div>
             
-            <div class="card" style="border: 2px solid; animation: chroma 3s infinite linear;">
+            <div class="card" style="border: 2px solid; animation: chroma 3s infinite linear; background: rgba(0,0,0,0.5);">
                 <h3 style="font-size:0.8rem;">SITE_PROPRIO</h3>
-                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/SEUNUMERO'">HIRE_NOW</button>
+                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/SEUNUMERO'">SOLICITAR_SITE</button>
             </div>
         </div>
     </div>
 
     <div id="profile-screen" class="layer">
         <div style="width:100%; max-width:800px; display:flex; justify-content:space-between; align-items:center;">
-            <h2 class="chroma">Kovaliosky_Dev.txt</h2>
-            <button class="btn-nav" onclick="closeCV()">BACK</button>
+            <h2 class="chroma">Kovaliosky_Profile.exe</h2>
+            <button class="btn-nav" onclick="closeCV()">BACK_TO_HUB</button>
         </div>
+
         <div class="cv-container">
-            <p style="color:#fff; font-size: 1.4rem; font-weight: bold;">Guilherme</p>
-            <p style="color:#00d4ff; font-size: 0.8rem; letter-spacing: 2px; margin-bottom:20px;">[ Kovaliosky Dev ]</p>
-            <div style="margin-bottom:20px;">
-                <span class="skill-tag">Design_Gráfico</span>
-                <span class="skill-tag">UI/UX</span>
+            <p style="color:#fff; font-size: 1.6rem; font-weight: bold; margin-bottom: 5px;">Guilherme</p>
+            <p style="color:#00d4ff; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 25px;">[ Conhecido por Kovaliosky Dev ]</p>
+            
+            <div style="margin-bottom: 25px;">
+                <span class="skill-tag">Design_Gráfico_Pro</span>
+                <span class="skill-tag">UI/UX_Strategy</span>
+                <span class="skill-tag">Brand_Identity</span>
                 <span class="skill-tag">Web_Systems</span>
+                <span class="skill-tag">Frontend_Logic</span>
             </div>
-            <p style="color:#888; font-size:0.8rem; line-height:1.6;">Especialista em identidades visuais e sites de alta performance com
+
+            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 5px;">PROFESSIONAL_EXPERIENCE:</h3>
+            
+            <div style="margin-bottom: 20px;">
+                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> Lead Visual Designer | Creative Solutions</p>
+                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
+                    Especialista em identidades visuais de alta performance. Desenvolvo projetos desde o logotipo minimalista até interfaces exclusivas para sistemas web e jogos 2D.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> UI/UX & Web Prototyping</p>
+                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
+                    Foco total na experiência do usuário. Crio wireframes e protótipos de alta fidelidade que garantem sites funcionais, rápidos e intuitivos para o cliente final.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> Social Media & Marketing Visual</p>
+                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
+                    Criação de criativos estratégicos para anúncios e redes sociais com estética moderna (Neon/Cyberpunk), focando em converter visualizações em autoridade de marca.
+                </p>
+            </div>
+
+            <div style="background: rgba(0, 212, 255, 0.05); padding: 15px; border-radius: 5px; margin-top: 10px;">
+                <p style="color: #00d4ff; font-size: 0.75rem; font-weight: bold;">DIFERENCIAL TECH:</p>
+                <p style="color: #ccc; font-size: 0.7rem; margin-top: 5px;">
+                    Diferente de designers convencionais, domino a lógica do código. Isso permite criar artes otimizadas, leves e perfeitamente implementáveis em qualquer plataforma web.
+                </p>
+            </div>
+
+            <div style="margin-top: 30px; display: flex; gap: 10px;">
+                <button class="btn-main" style="width:auto; padding: 12px 25px; font-size: 0.7rem;" onclick="window.location.href='https://wa.me/SEUNUMERO'">CONTRATAR_PROJETO</button>
+                <button class="btn-nav" style="font-size: 0.7rem;" onclick="window.location.href='mailto:SEUEMAIL@GMAIL.COM'">EMAIL</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function unlock() {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('hub-screen').classList.add('active-hub');
+        }
+        function openCV() { document.getElementById('profile-screen').classList.add('active-profile'); }
+        function closeCV() { document.getElementById('profile-screen').classList.remove('active-profile'); }
+    </script>
+</body>
+</html>

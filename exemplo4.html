@@ -2,51 +2,20 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Kovaliosky | Crypto Interface</title>
+    <title>Crypto Core | Kovaliosky</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-        body { background: #050505; color: #39FF14; font-family: 'JetBrains Mono', monospace; padding: 20px; }
-        .nav-back { margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
-        .dashboard { display: grid; grid-template-columns: 250px 1fr 300px; gap: 20px; height: 85vh; }
-        .panel { border: 1px solid #1a1a1a; background: #0a0a0a; padding: 15px; border-radius: 5px; }
-        .chart-placeholder { height: 200px; background: repeating-linear-gradient(45deg, #0a0a0a, #0a0a0a 10px, #0f0f0f 10px, #0f0f0f 20px); border: 1px solid #333; margin: 15px 0; }
-        .btn-trade { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #39FF14; background: none; color: #39FF14; cursor: pointer; font-family: inherit; }
-        .btn-trade:hover { background: #39FF14; color: #000; box-shadow: 0 0 15px #39FF14; }
-        .buy { border-color: #39FF14; color: #39FF14; }
-        .sell { border-color: #ff3131; color: #ff3131; }
-        .status { font-size: 0.7rem; color: #888; }
+        body { background: #050505; color: #39FF14; font-family: 'JetBrains Mono', monospace; margin: 0; }
+        .tech-note { background:#0a0a0a; color:#ff3131; padding:10px; font-size:0.7rem; border-bottom:1px solid #ff3131; }
+        .dashboard { padding: 40px; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-back">< VOLTAR AO HUB</a>
+    <div class="tech-note">DATA_CORE: Simulador de API Real-time // Proteção de Camada 7 // Interface reativa para Trading.</div>
     <div class="dashboard">
-        <div class="panel">
-            <h3>ASSETS</h3>
-            <button class="btn-trade">BTC/USDT</button>
-            <button class="btn-trade">ETH/USDT</button>
-            <button class="btn-trade">SOL/USDT</button>
-            <div class="status" style="margin-top: 20px;">SYSTEM: ONLINE<br>LATENCY: 14ms</div>
-        </div>
-        <div class="panel">
-            <h3>MARKET VIEW</h3>
-            <div class="chart-placeholder"></div>
-            <div style="display: flex; gap: 10px;">
-                <button class="btn-trade buy">LONG (BUY)</button>
-                <button class="btn-trade sell">SHORT (SELL)</button>
-            </div>
-            <div class="grid-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
-                <div class="panel" style="font-size: 0.8rem;">RSI: 64.2</div>
-                <div class="panel" style="font-size: 0.8rem;">MACD: BULLISH</div>
-            </div>
-        </div>
-        <div class="panel">
-            <h3>ORDER BOOK</h3>
-            <div style="font-size: 0.7rem; color: #ff3131;">68,432.10 | 1.24 BTC</div>
-            <div style="font-size: 0.7rem; color: #ff3131;">68,431.50 | 0.85 BTC</div>
-            <div style="font-size: 0.9rem; margin: 10px 0; border-top: 1px solid #333; padding-top: 10px;">PRICE: 68,425.00</div>
-            <div style="font-size: 0.7rem; color: #39FF14;">68,424.20 | 2.10 BTC</div>
-            <div style="font-size: 0.7rem; color: #39FF14;">68,423.80 | 0.45 BTC</div>
-        </div>
+        <h2>MARKET_LIVE_DATA</h2>
+        <p style="color: #666;">Analise de segurança e performance em tempo real.</p>
+        <br>
+        <a href="index.html" style="color: #fff; text-decoration: none;">[ VOLTAR_AO_SISTEMA ]</a>
     </div>
 </body>
 </html>

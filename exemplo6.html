@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise Checkout | Kovaliosky</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body { background: #f8f9fa; color: #333; font-family: 'Inter', sans-serif; margin: 0; }
+        .tech-note { background:#1a1a1a; color:#fff; padding:10px; font-size:0.7rem; text-align:center; font-family: monospace; }
+        .checkout-container { max-width: 500px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: bold; }
+        input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        .btn-pay { width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-pay:hover { background: #333; }
+        .secure-badge { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; color: #28a745; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="tech-note">PAYMENT_INTEGRATION: Criptografia de Ponta-a-Ponta // Conformidade PCI-DSS // Checkout Otimizado para Mobile.</div>
+    
+    <div class="checkout-container">
+        <h2 style="margin-top:0;">Finalizar Pagamento</h2>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:30px;">Pagamento processado via Gateway Seguro.</p>
+        
+        <div class="input-group">
+            <label>NOME NO CARTÃO</label>
+            <input type="text" placeholder="G A R SILVA">
+        </div>
+        
+        <div class="input-group">
+            <label>NÚMERO DO CARTÃO</label>
+            <input type="text" placeholder="**** **** **** 4242">
+        </div>
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+            <div class="input-group">
+                <label>VALIDADE</label>
+                <input type="text" placeholder="MM/AA">
+            </div>
+            <div class="input-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123">
+            </div>
+        </div>
+        
+        <button class="btn-pay" onclick="simulatePayment()">CONFIRMAR PAGAMENTO R$ 497,00</button>
+        
+        <div class="secure-badge">
+            <span>🔒 Ambiente 100% Criptografado</span>
+        </div>
+        
+        <center><a href="index.html" style="display:block; margin-top:20px; color:#999; text-decoration:none; font-size:0.7rem;">← VOLTAR AO HUB</a></center>
+    </div>
+
+    <script>
+        function simulatePayment() {
+            const btn = document.querySelector('.btn-pay');
+            btn.innerHTML = "PROCESSANDO...";
+            btn.style.background = "#666";
+            
+            setTimeout(() => {
+                alert("SUCESSO: Integração de pagamento validada com segurança!");
+                btn.innerHTML = "PAGAMENTO CONCLUÍDO";
+                btn.style.background = "#28a745";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

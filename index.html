@@ -10,6 +10,7 @@
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', monospace;
+            overflow-x: hidden;
         }
 
         .border-neon {
@@ -17,7 +18,6 @@
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
         }
 
-        /* ANIMAÇÃO RGB NO TÍTULO */
         .color-shift {
             animation: colorChange 8s infinite linear;
         }
@@ -28,22 +28,17 @@
                 text-shadow: 0 0 10px #00ff00;
             }
 
-            20% {
+            25% {
                 color: #00ffff;
                 text-shadow: 0 0 10px #00ffff;
             }
 
-            40% {
+            50% {
                 color: #ff00ff;
                 text-shadow: 0 0 10px #ff00ff;
             }
 
-            60% {
-                color: #ff0000;
-                text-shadow: 0 0 10px #ff0000;
-            }
-
-            80% {
+            75% {
                 color: #ffff00;
                 text-shadow: 0 0 10px #ffff00;
             }
@@ -58,6 +53,7 @@
             border: 1px solid rgba(255,255,255,0.1);
             color: #fff;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
             .nav-btn:hover {
@@ -73,14 +69,14 @@
         <h1 class="text-center text-3xl md:text-5xl font-black color-shift mb-8 tracking-[0.2em]">VisualStudioAndSecurity</h1>
 
         <div class="flex flex-wrap justify-center gap-2 mb-12 border-t border-b border-white/10 py-6">
-            <a href="/exemplo1.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_01</a>
-            <a href="/exemplo2.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_02</a>
-            <a href="/exemplo3.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_03</a>
-            <a href="/exemplo4.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_04</a>
-            <a href="/exemplo5.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_05</a>
-            <a href="/exemplo6.html" target="_blank" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_06</a>
-            <a href="/ficha.html" target="_blank" class="nav-btn px-4 py-1 text-[9px] font-bold border-blue-500 text-blue-400">FICHA</a>
-            <a href="mailto:guilherme@exemplo.com" class="nav-btn px-4 py-1 text-[9px] font-bold border-purple-500 text-purple-400">CONTATO</a>
+            <a href="exemplo1.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_01</a>
+            <a href="exemplo2.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_02</a>
+            <a href="exemplo3.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_03</a>
+            <a href="exemplo4.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_04</a>
+            <a href="exemplo5.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_05</a>
+            <a href="exemplo6.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_06</a>
+            <a href="README.md" target="_blank" class="nav-btn px-4 py-1 text-[9px] font-bold border-blue-500 text-blue-400">FICHA</a>
+            <a href="mailto:contato@visualstudio.com" class="nav-btn px-4 py-1 text-[9px] font-bold border-purple-500 text-purple-400">CONTATO</a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -96,7 +92,7 @@
             <div class="border-neon p-8 rounded-3xl bg-black">
                 <h2 class="text-xl font-bold mb-8 uppercase tracking-widest">Active_Solutions</h2>
                 <div class="mb-8">
-                    <a href="https://github.com/VisualStudioandSecurity?tab=repositories" target="_blank" class="block w-full p-6 border border-[#00ff00]/40 text-[#00ff00] text-center text-lg font-bold hover:bg-[#00ff00] hover:text-black transition-all">
+                    <a href="https://github.com/VisualStudioandSecurity" target="_blank" class="block w-full p-6 border border-[#00ff00]/40 text-[#00ff00] text-center text-lg font-bold hover:bg-[#00ff00] hover:text-black transition-all">
                         REPOS_ATIVOS: <span id="repo-count">0</span>
                     </a>
                 </div>
@@ -108,13 +104,37 @@
     </div>
 
     <script>
-        // WebSocket da Binance para o BTC
-        const btcDisplay = document.getElementById('btc-price');
-        const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
-        btcWs.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            btcDisplay.innerText = '$' + parseFloat(data.c).toLocaleString(undefined, { minimumFractionDigits: 2 });
-        };
+        // SCRIPT BITCOIN - WebSocket Binance
+        function startBTC() {
+            const btcDisplay = document.getElementById('btc-price');
+            const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
 
-        // API do GitHub
+            btcWs.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                if (data.c) {
+                    btcDisplay.innerText = '$' + parseFloat(data.c).toLocaleString(undefined, { minimumFractionDigits: 2 });
+                }
+            };
+
+            btcWs.onerror = () => { btcDisplay.innerText = "ERRO_CONEXÃO"; };
+        }
+
+        // SCRIPT GITHUB
         async function fetchGithub() {
+            try {
+                const res = await fetch('https://api.github.com/users/VisualStudioandSecurity');
+                const data = await res.json();
+                document.getElementById('repo-count').innerText = data.public_repos || '0';
+            } catch (err) {
+                document.getElementById('repo-count').innerText = 'OFF';
+            }
+        }
+
+        // INICIALIZAÇÃO
+        window.onload = () => {
+            startBTC();
+            fetchGithub();
+        };
+    </script>
+</body>
+</html>

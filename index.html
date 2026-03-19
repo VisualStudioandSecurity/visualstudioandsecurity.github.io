@@ -91,3 +91,62 @@
                 <a href="exemplo1.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_01</a>
                 <a href="exemplo2.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_02</a>
                 <a href="exemplo3.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_03</a>
+                <a href="exemplo4.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_04</a>
+                <a href="exemplo5.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_05</a>
+                <a href="exemplo6.html" class="border border-white/10 p-6 text-center text-[10px] hover:border-[#00ff00]">LP_06</a>
+            </div>
+        </section>
+
+        <section id="faq" class="pb-20">
+            <h2 class="text-[#00ff00] font-bold mb-8 uppercase tracking-widest">// FAQ_Database</h2>
+            <div class="space-y-6">
+                <details class="group border-b border-white/10 pb-6 cursor-pointer">
+                    <summary class="font-bold text-white uppercase text-sm list-none flex justify-between items-center">
+                        01. Qual o foco principal das soluções?
+                        <span class="text-[#00ff00] group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="text-gray-500 text-[11px] mt-4 leading-relaxed uppercase">
+                        Priorizamos a tríade: **Design de Elite**, **Performance** e **Segurança Máxima**.
+                        Cada linha de código é escrita visando a estabilidade do sistema e uma experiência de usuário intuitiva.
+                    </p>
+                </details>
+
+                <details class="group border-b border-white/10 pb-6 cursor-pointer">
+                    <summary class="font-bold text-white uppercase text-sm list-none flex justify-between items-center">
+                        02. Como é garantida a segurança?
+                        <span class="text-[#00ff00] group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="text-gray-500 text-[11px] mt-4 leading-relaxed uppercase">
+                        Implementamos protocolos de criptografia e validação de dados em todas as camadas.
+                        A integridade da informação é o nosso requisito não-negociável.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-white/5 text-center">
+            <p class="text-[9px] text-gray-600 tracking-[0.5em] uppercase">
+                © 2026 VisualStudioAndSecurity // All Rights Reserved
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const btcDisplay = document.getElementById('btc-price');
+            const repoDisplay = document.getElementById('repo-count');
+
+            const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
+            btcWs.onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                if (data.c) btcDisplay.innerText = '$' + parseFloat(data.c).toLocaleString(undefined, { minimumFractionDigits: 2 });
+            };
+
+            fetch('https://api.github.com/users/VisualStudioandSecurity')
+                .then(r => r.json()).then(d => {
+                    if (repoDisplay) repoDisplay.innerText = d.public_repos || '0';
+                });
+        };
+    </script>
+</body>
+</html>

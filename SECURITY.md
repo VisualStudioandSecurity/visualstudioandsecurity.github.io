@@ -44,6 +44,3 @@ Pratiquem a Divulgação Responsável, aguardando a correção antes de tornar a
 
 Kovaliosky DeV
 Senior Developer & Cybersecurity Specialist
-
-Dica de Implementação:
-Crie o arquivo SECURITY.md na raiz do seu repositório.

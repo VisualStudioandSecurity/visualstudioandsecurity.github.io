@@ -3,106 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio & Security | Hub de Inteligência Digital</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Política de Privacidade | Visual Studio & Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #0d1117;
-            --card: #161b22;
-            --text: #c9d1d9;
-            --header: #f0f6fc;
-            --accent-green: #238636;
-            --accent-blue: #58a6ff;
-            --border: #30363d;
-            --code-bg: #010409;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0d1117; 
+            color: #c9d1d9; 
+            padding: 40px; 
+            line-height: 1.8; 
+            margin: 0;
         }
-
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        header { background-color: var(--card); padding: 40px 20px; text-align: center; border-bottom: 1px solid var(--border); }
-        .logo { font-family: 'Poppins', sans-serif; font-size: 2.2rem; color: var(--header); margin: 0; text-transform: uppercase; }
-        .logo span { color: var(--accent-blue); }
-        
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        
-        .featured-article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 30px; }
-        .article-header-img { width: 100%; height: 350px; background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; }
-        
-        .article-body { padding: 40px; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; background: var(--accent-green); color: white; }
-        
-        h1.post-title { font-size: 2.2rem; color: var(--header); margin-top: 0; line-height: 1.2; }
-        .meta { font-size: 0.85rem; color: #8b949e; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-        
-        .post-content h3 { color: var(--accent-blue); margin-top: 30px; border-left: 4px solid var(--accent-blue); padding-left: 15px; }
-        .post-content p { margin-bottom: 20px; text-align: justify; }
-        .post-content ul { padding-left: 20px; margin-bottom: 25px; }
-        .post-content li { margin-bottom: 10px; }
-        
-        .code-block { background: var(--code-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--border); font-family: 'Consolas', monospace; color: #79c0ff; font-size: 0.9rem; overflow-x: auto; margin: 25px 0; }
-        .warning-box { background: rgba(241, 196, 15, 0.1); border: 1px solid #f1c40f; padding: 20px; border-radius: 8px; margin: 25px 0; }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); margin-top: 50px; }
-        .nav-links a { color: var(--accent-blue); text-decoration: none; margin: 0 10px; }
+        .container { max-width: 800px; margin: auto; background: #161b22; padding: 40px; border-radius: 12px; border: 1px solid #30363d; }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        h2 { color: #f0f6fc; margin-top: 30px; }
+        p { margin-bottom: 20px; text-align: justify; }
+        a { color: #58a6ff; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        .back-link { margin-top: 40px; display: block; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Política de Privacidade</h1>
+        <p>A sua privacidade é importante para nós. É política da <strong>Visual Studio & Security</strong> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="https://visualstudioandsecurity.com.br">visualstudioandsecurity.com.br</a>.</p>
 
-<header>
-    <h1 class="logo">Visual Studio <span>& Security</span></h1>
-    <p>Hub de Inteligência em Cibersegurança e Mercado Financeiro</p>
-</header>
+        <h2>1. Coleta de Informações</h2>
+        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p>
 
-<div class="container">
-    <article class="featured-article">
-        <div class="article-header-img"></div>
-        <div class="article-body">
-            <span class="badge">Relatório Técnico Profissional</span>
-            <h1 class="post-title">Análise Forense: Campanha FAUX#ELEVATE e o Sequestro de Recursos Corporativos</h1>
-            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
-            
-            <div class="post-content">
-                <p>Hackers estão utilizando uma nova abordagem altamente sofisticada para comprometer redes empresariais, focando no roubo massivo de credenciais e na implementação de mineradores de criptoativos ocultos[cite: 1]. Esta operação, identificada por especialistas como <strong>FAUX#ELEVATE</strong>, utiliza engenharia social refinada e abusos de infraestruturas legítimas para contornar defesas tradicionais[cite: 2].</p>
+        <h2>2. Uso de Cookies e Google AdSense</h2>
+        <p>O Google, como fornecedor de terceiros, utiliza cookies para exibir anúncios em nosso site. Com o cookie DART, o Google pode exibir anúncios com base nas visitas que o usuário fez a este ou a outros sites na Internet. Os usuários podem desativar o cookie DART visitando a Política de Privacidade da rede de conteúdo e anúncios do Google.</p>
 
-                <h3>A Anatomia do Ataque: O VBScript de 224 Mil Linhas</h3>
-                <p>O ataque inicia-se com e-mails de phishing direcionados que entregam currículos (CVs) falsos[cite: 1, 3]. Quando o arquivo é aberto, o sistema exibe uma mensagem de erro simulando um arquivo corrompido — um "bait" clássico[cite: 3]. Por trás dessa tela, o Windows executa um script <strong>Visual Basic Script (VBS)</strong> massivo com aproximadamente 224 mil linhas de código ofuscado, das quais apenas 226 contêm a carga útil real[cite: 3].</p>
+        <h2>3. Segurança dos Dados</h2>
+        <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, os protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
 
-                <h3>Exfiltração via SMTP e Roubo de Credenciais</h3>
-                <p>O malware utiliza o projeto <em>ChromElevator</em> para contornar as proteções de criptografia vinculada a aplicativos (ABE) e extrair senhas de navegadores baseados em Chromium[cite: 5]. Além disso, ferramentas específicas como o <strong>mozilla.vbs</strong> e o <strong>walls.vbs</strong> são implantadas para roubar perfis do Firefox e arquivos sensíveis diretamente do desktop[cite: 6].</p>
-                <p>Os dados roubados são exfiltrados através de duas contas russas independentes (<em>olga.aitsaid@mail.ru</em> e <em>3pw5nd9neeyn@mail.ru</em>) que compartilham a mesma senha via protocolo SMTP, enviando o conteúdo para o endereço final do atacante[cite: 6, 7].</p>
+        <h2>4. Links para Sites de Terceiros</h2>
+        <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.</p>
 
-                <h3>Criptomineração e Persistência no Kernel</h3>
-                <p>Após o roubo de dados, a campanha implementa o <strong>mservice.exe</strong> (XMRig) para minerar Monero[cite: 1, 6]. Para garantir o desempenho máximo, é utilizado o driver de kernel <strong>WinRing0x64.sys</strong>, permitindo o sequestro total do potencial da CPU[cite: 6]. O Trojan <strong>RuntimeHost.exe</strong> mantém a persistência, modificando regras de firewall e comunicando-se periodicamente com servidores de comando e controle (C2) hospedados em sites WordPress comprometidos[cite: 2, 6].</p>
-
-                <div class="warning-box">
-                    <strong>Alerta de Velocidade:</strong> A cadeia de infecção completa — da execução do VBS até a exfiltração final — ocorre em aproximadamente <strong>25 segundos</strong>, tornando a resposta manual humana praticamente impossível[cite: 10].
-                </div>
-
-                <h3>Mecanismo de Defesa Recomendado</h3>
-                <p>Para mitigar esta ameaça em sua rede, nossa equipe recomenda a aplicação imediata do seguinte script de endurecimento via PowerShell, focado em desativar o Windows Script Host e bloquear as portas de exfiltração SMTP:</p>
-
-                <div class="code-block">
-                    # Desativa o motor de execução VBScript malicioso<br>
-                    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Script Host\Settings" -Name "Enabled" -Value 0<br><br>
-                    # Bloqueia exfiltração via SMTP para e-mails desconhecidos<br>
-                    New-NetFirewallRule -DisplayName "Block_Malware_SMTP" -Direction Outbound -LocalPort 587 -Protocol TCP -Action Block
-                </div>
-
-                <p><em>Referência: Dados baseados no relatório técnico da Securonix sobre operações de ameaças em múltiplas etapas[cite: 9, 10].</em></p>
-            </div>
-        </div>
-    </article>
-</div>
-
-<footer>
-    <nav class="nav-links">
-        <a href="index.html">Início</a>
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="sitemap.xml">Sitemap</a>
-    </nav>
-    <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Visual Studio & Security. Todos os direitos reservados.</p>
-</footer>
-
+        <a href="index.html" class="back-link">← Voltar para a Página Inicial</a>
+    </div>
 </body>
 </html>

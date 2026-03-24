@@ -43,7 +43,6 @@
         .post-content ul { padding-left: 20px; margin-bottom: 25px; }
         .post-content li { margin-bottom: 10px; }
         
-        .code-block { background: var(--code-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--border); font-family: 'Consolas', monospace; color: #79c0ff; font-size: 0.9rem; overflow-x: auto; margin: 25px 0; }
         .warning-box { background: rgba(241, 196, 15, 0.1); border: 1px solid #f1c40f; padding: 20px; border-radius: 8px; margin: 25px 0; color: #f1c40f; }
 
         .glossary { background: #1c2128; padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-top: 40px; }
@@ -72,18 +71,17 @@
             <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
             
             <div class="post-content">
-                <p>A operação <strong>FAUX#ELEVATE</strong> utiliza currículos falsos (CVs) como isca para iniciar uma cadeia de infecção extremamente veloz. O malware utiliza scripts VBScript de 224 mil linhas para ocultar sua carga útil real, onde apenas 226 linhas contêm o código malicioso, evitando assim detecções por sandboxes automatizadas.</p>
+                <p>A operação <strong>FAUX#ELEVATE</strong> utiliza currículos falsos como isca para iniciar uma cadeia de infecção extremamente veloz. O malware utiliza scripts VBScript massivos para ocultar código malicioso e evitar detecções por sandboxes.</p>
 
-                <h3>Exfiltração e Arsenal de Malware</h3>
+                <h3>Exfiltração e Arsenal</h3>
                 <ul>
-                    <li><strong>ChromElevator:</strong> Utilizado para extrair credenciais e dados de navegadores baseados em Chromium, contornando proteções ABE.</li>
-                    <li><strong>mozilla.vbs e walls.vbs:</strong> Responsáveis pelo roubo de perfis do Firefox e arquivos sensíveis localizados no desktop.</li>
-                    <li><strong>Mineração de Monero:</strong> Instala o minerador <em>mservice.exe</em> (XMRig) utilizando o driver <em>WinRing0x64.sys</em> para sequestrar o poder total da CPU.</li>
-                    <li><strong>Destino:</strong> Os dados roubados são enviados via SMTP para endereços russos, incluindo <em>olga.aitsaid@mail.ru</em>.</li>
+                    <li><strong>ChromElevator:</strong> Extração de credenciais de navegadores Chromium.</li>
+                    <li><strong>Mineração:</strong> Uso do driver WinRing0x64.sys para sequestro de CPU.</li>
+                    <li><strong>Destino:</strong> Dados enviados via SMTP para domínios russos.</li>
                 </ul>
 
                 <div class="warning-box">
-                    <strong>Alerta:</strong> Todo o processo, desde a execução inicial até a exfiltração completa dos dados, ocorre em aproximadamente 25 segundos.
+                    <strong>Alerta:</strong> A exfiltração completa ocorre em aproximadamente 25 segundos.
                 </div>
             </div>
         </div>
@@ -93,16 +91,14 @@
         <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200');"></div>
         <div class="article-body">
             <span class="badge badge-alert">Alerta CNCERT</span>
-            <h1 class="post-title">CNCERT Alerta para Riscos de Segurança no Agente de IA OpenClaw</h1>
+            <h1 class="post-title">CNCERT Alerta para Riscos no Agente de IA OpenClaw</h1>
             <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
             
             <div class="post-content">
-                <p>O CNCERT emitiu um alerta sobre o uso do <strong>OpenClaw</strong>, um agente de IA autônomo. O órgão destacou que configurações de segurança padrão fracas e o acesso privilegiado ao sistema podem ser explorados por agentes mal-intencionados para assumir o controle total do endpoint.</p>
+                <p>O CNCERT emitiu um alerta sobre o <strong>OpenClaw</strong>, destacando que acessos privilegiados podem ser explorados por agentes mal-intencionados.</p>
 
                 <h3>Injeção Indireta de Prompt (IDPI)</h3>
-                <p>O ataque, também conhecido como XPIA, permite que adversários utilizem recursos benignos da IA, como resumo de páginas, para executar instruções manipuladas. Isso pode resultar no vazamento de informações sensíveis e até na paralisia de sistemas empresariais inteiros em setores como finanças e energia.</p>
-                
-                <p>Pesquisadores da PromptArmor descobriram que pré-visualizações de links em apps como Telegram e Discord podem ser transformadas em vias de exfiltração imediata, transmitindo dados confidenciais para domínios controlados por atacantes sem a necessidade de clique do usuário.</p>
+                <p>O ataque XPIA permite usar recursos da IA para executar instruções manipuladas, resultando no vazamento de dados sensíveis através de pré-visualizações de links em apps como Telegram e Discord.</p>
             </div>
         </div>
     </article>
@@ -111,8 +107,40 @@
         <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1611186871348-b1ec696e5237?q=80&w=1200');"></div>
         <div class="article-body">
             <span class="badge badge-apple">Segurança Apple</span>
-            <h1 class="post-title">Apple Corrige Falha Crítica no WebKit com Atualizações em Segundo Plano</h1>
+            <h1 class="post-title">Apple Corrige Falha Crítica CVE-2026-20643 no WebKit</h1>
             <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
             
             <div class="post-content">
-                <p>A Apple lançou a categoria
+                <p>A falha <strong>CVE-2026-20643</strong> permitia que sites maliciosos burlassem a política de mesma origem. A Apple creditou o pesquisador <strong>Thomas Espach</strong> pela descoberta.</p>
+                
+                <h3>Resolução e Patches Leves</h3>
+                <p>A correção foi aplicada via validação de entrada nas versões iOS 26.3.1 (a) e macOS 26.3.2 (a). O novo sistema de "Melhorias de Segurança em Segundo Plano" permite que a Apple envie patches contínuos sem a necessidade de atualizações massivas de sistema.</p>
+            </div>
+        </div>
+    </article>
+
+    <section class="glossary">
+        <h2>Glossário Técnico</h2>
+        <dl>
+            <dt>WMI</dt>
+            <dd>Estrutura para gerenciar dados em sistemas Windows, abusada para persistência.</dd>
+            <dt>IDPI / XPIA</dt>
+            <dd>Injeção de instruções maliciosas em IAs através de fontes externas.</dd>
+            <dt>WebKit</dt>
+            <dd>Motor de renderização do Safari e bibliotecas do sistema Apple.</dd>
+        </dl>
+    </section>
+
+</div>
+
+<footer>
+    <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="sitemap.xml">Sitemap</a>
+    </nav>
+    <p>&copy; 2026 Visual Studio & Security. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

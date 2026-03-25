@@ -3,127 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio & Security | Hub de Inteligência Digital</title>
+    <title>Visual Studio & Security | Intelligence Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0d1117;
+            --bg: #0a0c10;
             --card: #161b22;
             --text: #c9d1d9;
             --header: #f0f6fc;
             --accent-green: #238636;
             --accent-blue: #58a6ff;
+            --accent-gold: #f3ba2f;
             --border: #30363d;
             --code-bg: #010409;
         }
 
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        header { background-color: var(--card); padding: 40px 20px; text-align: center; border-bottom: 1px solid var(--border); }
-        .logo { font-family: 'Poppins', sans-serif; font-size: 2.2rem; color: var(--header); margin: 0; text-transform: uppercase; }
+
+        /* Header com Vídeo de Fundo (O Olho) */
+        header {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .header-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .header-content {
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+            max-width: 800px;
+        }
+
+        .logo { font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: var(--header); margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         .logo span { color: var(--accent-blue); }
 
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
-        .featured-article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 50px; }
-        .article-header-img { width: 100%; height: 350px; background-color: #21262d; background-size: cover; background-position: center; }
-        .article-body { padding: 40px; }
+        /* Grid de Artigos */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; background: var(--accent-green); color: white; }
+        .featured-article { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+
+        .article-header-img { width: 100%; height: 200px; background-size: cover; background-position: center; }
+        .article-body { padding: 25px; flex-grow: 1; }
+
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; background: var(--accent-green); color: white; }
         .badge-apple { background: #555; }
         .badge-alert { background: #d73a49; }
 
-        h1.post-title { font-size: 2.2rem; color: var(--header); margin-top: 0; line-height: 1.2; }
-        .meta { font-size: 0.85rem; color: #8b949e; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        h1.post-title { font-size: 1.4rem; color: var(--header); margin-top: 0; line-height: 1.3; }
+        .meta { font-size: 0.75rem; color: #8b949e; margin-bottom: 15px; }
 
-        .post-content h3 { color: var(--accent-blue); margin-top: 30px; border-left: 4px solid var(--accent-blue); padding-left: 15px; }
-        .post-content p { margin-bottom: 20px; text-align: justify; }
-        .post-content ul { padding-left: 20px; margin-bottom: 25px; }
-        .post-content li { margin-bottom: 10px; }
+        .post-content p { font-size: 0.95rem; text-align: left; opacity: 0.9; }
 
-        .code-block { background: var(--code-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--border); font-family: 'Consolas', monospace; color: #79c0ff; font-size: 0.9rem; overflow-x: auto; margin: 25px 0; }
-        .warning-box { background: rgba(241, 196, 15, 0.1); border: 1px solid #f1c40f; padding: 20px; border-radius: 8px; margin: 25px 0; color: #f1c40f; }
+        /* Glossário Estilizado */
+        .glossary { background: #1c2128; padding: 40px; border-radius: 12px; border: 1px dotted var(--border); margin-top: 60px; }
+        .glossary h2 { color: var(--accent-blue); font-family: 'JetBrains Mono', monospace; }
+        .glossary dt { font-weight: bold; color: var(--accent-gold); margin-top: 15px; font-family: 'JetBrains Mono', monospace; }
 
-        .glossary { background: #1c2128; padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-top: 40px; }
-        .glossary h2 { color: var(--accent-blue); margin-top: 0; }
-        .glossary dt { font-weight: bold; color: var(--header); margin-top: 15px; }
-        .glossary dd { margin-left: 0; color: #8b949e; font-size: 0.9rem; }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); background: var(--code-bg); }
+        .nav-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .nav-links a:hover { text-decoration: underline; }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); margin-top: 50px; }
-        .nav-links a { color: var(--accent-blue); text-decoration: none; margin: 0 10px; }
+        @media (max-width: 768px) {
+            .header-content { margin: 20px; padding: 20px; }
+            .logo { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="logo">Visual Studio <span>& Security</span></h1>
-    <p>Hub de Inteligência em Cibersegurança e Mercado Financeiro</p>
+    <video autoplay loop muted playsinline class="header-video">
+        <source src="assets/tech_eye_background.mp4" type="video/mp4">
+    </video>
+    <div class="header-content">
+        <h1 class="logo">Visual Studio <span>& Security</span></h1>
+        <p>Hub de Inteligência em Cibersegurança e Análise de Ameaças</p>
+    </div>
 </header>
 
 <div class="container">
 
-    <article class="featured-article">
-        <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200');"></div>
-        <div class="article-body">
-            <span class="badge">Relatório Técnico</span>
-            <h1 class="post-title">Campanha FAUX#ELEVATE: O Ataque de 25 Segundos via VBScript</h1>
-            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
-            <div class="post-content">
-                <p>A operação <strong>FAUX#ELEVATE</strong> utiliza currículos falsos (CVs) como isca para iniciar uma cadeia de infecção extremamente veloz. O malware utiliza scripts VBScript de 224 mil linhas para ocultar sua carga útil real, onde apenas 226 linhas contêm o código malicioso, evitando assim detecções por sandboxes automatizadas.</p>
-                <h3>Exfiltração e Arsenal de Malware</h3>
-                <ul>
-                    <li><strong>ChromElevator:</strong> Extrai credenciais e dados de navegadores baseados em Chromium.</li>
-                    <li><strong>mozilla.vbs e walls.vbs:</strong> Roubam perfis do Firefox e arquivos sensíveis do desktop.</li>
-                    <li><strong>Mineração de Monero:</strong> Instala o minerador <em>mservice.exe</em> (XMRig) usando o driver <em>WinRing0x64.sys</em>.</li>
-                    <li><strong>Destino:</strong> Dados enviados via SMTP para <em>olga.aitsaid@mail.ru</em>.</li>
-                </ul>
-                <div class="warning-box">
-                    <strong>Alerta:</strong> Todo o processo ocorre em cerca de 25 segundos.
+    <div class="articles-grid">
+        <article class="featured-article">
+            <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600');"></div>
+            <div class="article-body">
+                <span class="badge">Relatório Técnico</span>
+                <h1 class="post-title">Campanha FAUX#ELEVATE: Ataque VBScript</h1>
+                <div class="meta">24 Mar, 2026</div>
+                <div class="post-content">
+                    <p>Invasão via CVs falsos executando scripts de 224k linhas. Exfiltração de dados Chromium em apenas 25 segundos.</p>
                 </div>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <article class="featured-article">
-        <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-21780ecad995?q=80&w=1200');"></div>
-        <div class="article-body">
-            <span class="badge badge-alert">Alerta CNCERT</span>
-            <h1 class="post-title">CNCERT Alerta para Riscos de Segurança no Agente de IA OpenClaw</h1>
-            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
-            <div class="post-content">
-                <p>O CNCERT emitiu um alerta sobre o uso do <strong>OpenClaw</strong>, um agente de IA autônomo. Configurações de segurança fracas e acesso privilegiado podem ser explorados por agentes maliciosos para assumir o controle total do sistema.</p>
-                <h3>Injeção Indireta de Prompt (IDPI)</h3>
-                <p>Também conhecida como XPIA, essa técnica permite que invasores usem funções legítimas da IA para executar comandos manipulados, resultando em vazamento de dados e paralisação de sistemas críticos.</p>
-                <p>Pesquisadores da PromptArmor descobriram que pré-visualizações de links em apps como Telegram e Discord podem ser exploradas para exfiltrar dados automaticamente.</p>
+        <article class="featured-article">
+            <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-21780ecad995?q=80&w=600');"></div>
+            <div class="article-body">
+                <span class="badge badge-alert">Alerta CNCERT</span>
+                <h1 class="post-title">Risco Crítico no Agente IA OpenClaw</h1>
+                <div class="meta">24 Mar, 2026</div>
+                <div class="post-content">
+                    <p>Vulnerabilidades de Injeção Indireta de Prompt (XPIA) permitem controle total do sistema via links maliciosos.</p>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <article class="featured-article">
-        <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-b1ec696e5237?q=80&w=1200');"></div>
-        <div class="article-body">
-            <span class="badge badge-apple">Segurança Apple</span>
-            <h1 class="post-title">Apple Corrige Falha Crítica no WebKit com Atualizações em Segundo Plano</h1>
-            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
-            <div class="post-content">
-                <p>A Apple lançou as “Melhorias de Segurança em Segundo Plano” para aplicar correções rápidas sem depender de grandes atualizações. A primeira aborda a falha <strong>CVE-2026-20643</strong> no WebKit.</p>
-                <h3>Impacto e Resolução</h3>
-                <p>A vulnerabilidade de origem cruzada na API de Navegação permitia que sites maliciosos acessassem dados de outros domínios. A Apple recomenda manter a “Instalação Automática” ativada para garantir a aplicação imediata das correções.</p>
+        <article class="featured-article">
+            <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-b1ec696e5237?q=80&w=600');"></div>
+            <div class="article-body">
+                <span class="badge badge-apple">Segurança Apple</span>
+                <h1 class="post-title">Apple Corrige CVE-2026-20643 (WebKit)</h1>
+                <div class="meta">24 Mar, 2026</div>
+                <div class="post-content">
+                    <p>Patch de segurança em segundo plano corrige falha crítica de origem cruzada na API de Navegação.</p>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
+    </div>
 
     <section class="glossary">
-        <h2>Glossário Técnico</h2>
+        <h2>_glossário_técnico</h2>
         <dl>
             <dt>WMI (Windows Management Instrumentation)</dt>
-            <dd>Estrutura usada para gerenciar dados e operações em sistemas Windows, frequentemente explorada por malwares.</dd>
+            <dd>Framework de gerenciamento explorado para persistência e coleta de dados em sistemas Windows.</dd>
+            
             <dt>IDPI / XPIA</dt>
-            <dd>Injeção Indireta de Prompt; técnica que manipula o comportamento de modelos de linguagem via dados externos.</dd>
+            <dd>Técnica de manipulação de LLMs através de entradas de dados externas não sanitizadas.</dd>
+            
             <dt>ABE (App-Bound Encryption)</dt>
-            <dd>Protege dados criptografados vinculando-os a um aplicativo específico.</dd>
+            <dd>Camada de proteção do Chromium que vincula segredos criptografados à identidade do executável.</dd>
         </dl>
     </section>
 
@@ -131,11 +182,11 @@
 
 <footer>
     <nav class="nav-links">
-        <a href="index.html">Início</a>
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="sitemap.xml">Sitemap</a>
+        <a href="index.html">Dashboards</a>
+        <a href="#">Finance</a>
+        <a href="#">Games</a>
     </nav>
-    <p>&copy; 2026 Visual Studio & Security. Todos os direitos reservados.</p>
+    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security. Licenciado sob Apache 2.0.</p>
 </footer>
 
 </body>

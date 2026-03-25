@@ -1,14 +1,13 @@
-/* --- Header com o Olho Metálico --- */
+/* --- Header com o Olho Metálico - Versão High-Performance --- */
 header {
     position: relative;
-    height: 600px; /* Leve aumento para maior impacto visual */
+    height: 600px; /* Impacto visual ampliado */
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid var(--accent-blue);
     background-color: #000;
-    /* Adicionado um brilho sutil na borda inferior */
     box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2); 
 }
 
@@ -20,36 +19,41 @@ header {
     height: 100%;
     z-index: 0;
     object-fit: cover;
-    opacity: 0.35; /* Leve redução para priorizar o contraste do texto */
-    /* Refinamento de filtros para um visual mais 'Cybersecurity' */
-    filter: brightness(0.5) contrast(1.3) saturate(0.7) blue-shift(2px);
-    pointer-events: none; /* Garante que o vídeo não interaja com o mouse */
+    opacity: 0.35; 
+    /* Filtros otimizados para estética Cybersecurity */
+    filter: brightness(0.5) contrast(1.3) saturate(0.7);
+    pointer-events: none; 
 }
 
 .header-content {
     position: relative;
-    z-index: 2; /* Aumentado para garantir sobreposição total */
-    background: rgba(13, 17, 23, 0.65); /* Mais transparência para o blur brilhar */
-    backdrop-filter: blur(20px) saturate(180%); /* Glassmorphism ultra-profundo */
+    z-index: 2; 
+    background: rgba(13, 17, 23, 0.65); 
+    /* Glassmorphism avançado para seu monitor de alta frequência */
+    backdrop-filter: blur(20px) saturate(180%); 
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 60px;
     border-radius: 24px;
     text-align: center;
-    /* Borda com gradiente sutil simulando metal */
     border: 1px solid rgba(88, 166, 255, 0.4);
     max-width: 850px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
     
-    /* Animação de entrada suave para aproveitar os 200Hz */
+    /* Animação ultra-fluida aproveitando os 200Hz */
     animation: fadeInContent 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Animação suave para o Hub de Inteligência */
 @keyframes fadeInContent {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .logo {
-    text-shadow: 0 0 15px rgba(88, 166, 255, 0.5); /* Brilho neon sutil no logo */
+    text-shadow: 0 0 15px rgba(88, 166, 255, 0.5); 
 }

@@ -1,14 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kovaliosky DeV | Senior Developer & Graphic Designer</title>
-    <meta name="description" content="Portfólio de Guilherme (Kovaliosky DeV), especialista em Desenvolvimento Senior, Design Gráfico e Segurança Cibernética. Explore meu trabalho e experiência.">
-    <meta name="keywords" content="Desenvolvedor Senior, Design Gráfico, Segurança Cibernética, Portfólio, Guilherme Kovaliosky, Desenvolvimento Web, UI/UX, Pentest, AWS, Azure, GCP">
-    <meta name="author" content="Guilherme Kovaliosky DeV">
-    <link rel="canonical" href="https://seusite.com.br">
+    <title>Kovaliosky DeV | Senior Developer & Cybersecurity Specialist</title>
+    <meta name="description" content="Portfólio de Guilherme (Kovaliosky DeV), especialista em Desenvolvimento Senior e Segurança Cibernética.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
@@ -35,176 +31,119 @@
             background: var(--card-bg);
             border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .glass-card:hover {
             border-color: var(--accent);
-            transform: scale(1.03);
-            box-shadow: 0 6px 8px rgba(0, 242, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 242, 255, 0.1);
         }
-        /* Placeholder for custom scrollbar - requires more detailed CSS */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00b3b8;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased">
-    <!-- Hero Section -->
-    <section class="relative py-20 md:py-32">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        Olá, eu sou <span class="gradient-text">Guilherme Kovaliosky</span>
+
+    <section class="relative py-20 md:py-32 flex items-center min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                        Olá, eu sou <br><span class="gradient-text">Kovaliosky DeV</span>
                     </h1>
-                    <p class="text-lg mb-6 text-gray-300">
-                        Desenvolvedor Senior, Designer Gráfico e especialista em Segurança Cibernética. Explorando a interseção entre código, design e segurança, oferecendo soluções completas e inovadoras.
-                    </p>
-                    <p class="text-gray-300 mb-6">
-                        Apaixonado por tecnologia e design, desde meus 15 anos de idade sempre gostei de pesquisar sobre como é feito o processo e desenvolvimentos de sites e programas, desde então passei a pesquiar e me relacionar com pessoas da área de desenvolvimento de softwares, hoje com 23 anos, 8 anos de muito estudo e dedicação tenho um vasto conhecimento,busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade.
+                    <p class="text-lg md:text-xl mb-8 text-gray-400 max-w-lg">
+                        Senior Developer e Especialista em Cybersecurity. Transformando lógica complexa em soluções digitais seguras e de alta performance.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#projects" class="bg-accent hover:bg-blue-600 text-bg-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300">
+                        <a href="#projects" class="bg-accent hover:brightness-110 text-black font-bold py-3 px-8 rounded-full transition-all">
                             Meus Projetos
                         </a>
-                        <a href="#contact" class="border border-accent hover:bg-accent hover:text-bg-dark text-accent font-semibold py-2 px-6 rounded-full transition-colors duration-300">
+                        <a href="#contact" class="border border-accent text-accent hover:bg-accent hover:text-black font-bold py-3 px-8 rounded-full transition-all">
                             Contato
                         </a>
                     </div>
                 </div>
-                <div>
-                    <img src="https://placehold.co/600x400" alt="Imagem de Perfil" class="rounded-lg shadow-xl glass-card">
+                <div class="flex justify-center">
+                    <img src="https://placehold.co/500x500/0d0d0d/00f2ff?text=Kovaliosky+DeV" alt="Profile" class="rounded-2xl shadow-2xl border border-gray-800 glass-card w-full max-w-md">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-32">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold mb-8 text-center">Sobre Mim</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Com 8 anos de experiência no mercado de tecnologia, dedico-me a criar soluções inovadoras e seguras que impulsionam o sucesso dos meus clientes. Minha jornada profissional tem sido marcada por desafios e aprendizados constantes.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Atuo como Desenvolvedor Senior, liderando equipes multidisciplinares e implementando as melhores práticas de desenvolvimento de software. Acredito na colaboração e na comunicação transparente como pilares para o sucesso de qualquer projeto. No Design Gráfico, busco criar identidades visuais marcantes e experiências de usuário agradáveis, que transmitam a essência da marca e engajem o público-alvo.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Sou um entusiasta da cultura DevOps e busco sempre automatizar processos para aumentar a eficiência e a qualidade das entregas. Acredito que a integração contínua e a entrega contínua são fundamentais para o sucesso de projetos de software modernos.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        A Segurança Cibernética é uma prioridade em todos os meus projetos, desde a concepção até a implementação. Garanto a integridade e confidencialidade das informações, protegendo os sistemas contra ameaças e vulnerabilidades.
-                    </p>
-                </div>
-                <div>
-                    <div class="glass-card p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Habilidades</h3>
-                        <p class="text-gray-300 mb-4">
-                            Possuo um conjunto diversificado de habilidades que me permitem atuar em diversas áreas da tecnologia.
-                        </p>
-                        <ul class="list-disc list-inside text-gray-300">
-                            <li>Desenvolvimento Full-Stack (React, Node.js, Python): Experiência na criação de aplicações web completas, desde o front-end até o back-end.</li>
-                            <li>Design de Interface e Experiência do Usuário (UI/UX): Criação de interfaces intuitivas e agradáveis, focadas na experiência do usuário.</li>
-                            <li>Segurança Cibernética (Pentest, Análise de Vulnerabilidades): Identificação e correção de vulnerabilidades em sistemas e aplicações.</li>
-                            <li>Gerenciamento de Projetos (Agile, Scrum): Liderança de equipes e gerenciamento de projetos utilizando metodologias ágeis.</li>
-                            <li>Cloud Computing (AWS, Azure, GCP): Experiência na utilização de serviços de cloud computing para escalabilidade e confiabilidade.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 md:py-32 bg-card-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold mb-8 text-center">Meus Projetos</h2>
-            <p class="text-gray-300 text-center mb-8">
-                Aqui estão alguns dos meus projetos mais recentes. Cada projeto representa um desafio único e uma oportunidade de aplicar meus conhecimentos e habilidades.
-            </p>
+    <section id="projects" class="py-24 bg-[#080808]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center underline decoration-accent">Projetos em Destaque</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="glass-card p-6 rounded-lg">
-                    <img src="https://placehold.co/400x300" alt="Project 1" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 1</h3>
-                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
-                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>O meu primeiro projeto é uma ferramenta de ánalise gráfica com um robusto código-cérebro, capaz de análisar difentes paramentros ao mesmo tempo, algo que nós humanos ainda não somos capazes, a ferramenta utilaza(bibliotecas)para estabelecer uma conexão assíncrona com a API da Binance, Os dados brutos de OHLCV (Open, High, Low, Close, Volume) são estruturados em DataFrames utilizando outra (biblioteca) para permitir cálculos matemáticos rápidos,A ferramenta está configurada para monitorar o par BTC/USDT no tempo gráfico de 4 horas (4h), alinhado com estratégias de swing trade e scalping de alta precisão,com possibilidade de configurar o tempo gráfico e parametros utilizados na analises,O scanner opera em um ciclo contínuo (while loop) com verificações a cada 60 segundos para evitar o rate limit da exchange e garantir a atualização constante.
-                </div>
-                <!-- Project Card 2 -->
-                <div class="glass-card p-6 rounded-lg">
-                    <img src="https://placehold.co/400x300" alt="Project 2" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 2</h3>
-                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
-                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="glass-card p-6 rounded-lg">
-                    <img src="https://placehold.co/400x300" alt="Project 3" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 3</h3>
-                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
-                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-32">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold mb-8 text-center">Contato</h2>
-            <p class="text-gray-300 text-center mb-8">
-                Entre em contato comigo para discutir seus projetos, oportunidades de colaboração ou simplesmente para trocar ideias sobre tecnologia, design e segurança.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Sinta-se à vontade para entrar em contato comigo para discutir projetos, oportunidades ou apenas para trocar ideias sobre tecnologia e design. Estou sempre aberto a novas conexões e desafios.
+                
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full">
+                    <div class="mb-6 overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/400x250/111/00f2ff?text=Finance+Scanner" alt="Scanner Financeiro" class="hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-accent mono">>_ Finance Scanner</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow text-justify">
+                        Ferramenta de análise gráfica com robusto código-cérebro, processando múltiplos parâmetros simultâneos via API da Binance. Estruturado com Pandas para cálculos de alta velocidade em BTC/USDT, monitorando o timeframe de 4h com foco em scalping de precisão.
                     </p>
-                    <ul class="text-gray-300">
-                        <li class="mb-2"><strong class="text-primary">Email:</strong> <a href="mailto:contato@email.com" class="text-accent hover:text-blue-300">contato@email.com</a></li>
-                        <li class="mb-2"><strong class="text-primary">Telefone:</strong> (XX) XXXX-XXXX</li>
-                        <li class="mb-2"><strong class="text-primary">LinkedIn:</strong> <a href="#" class="text-accent hover:text-blue-300">linkedin.com/in/kovalioskydev</a></li>
-                        <li><strong class="text-primary">GitHub:</strong> <a href="#" class="text-accent hover:text-blue-300">github.com/kovalioskydev</a></li>
-                    </ul>
+                    <a href="#" class="text-white font-semibold flex items-center hover:text-accent transition-colors">
+                        Ver detalhes no GitHub <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <div>
-                    <form class="glass-card p-6 rounded-lg">
-                        <div class="mb-4">
-                            <label for="name" class="block text-primary text-sm font-semibold mb-2">Nome</label>
-                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Seu nome">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-primary text-sm font-semibold mb-2">Email</label>
-                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Seu email">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-primary text-sm font-semibold mb-2">Mensagem</label>
-                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Sua mensagem"></textarea>
-                        </div>
-                        <button type="submit" class="bg-accent hover:bg-blue-600 text-bg-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300">Enviar Mensagem</button>
-                    </form>
+
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full">
+                    <div class="mb-6 overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/400x250/111/555?text=Cyber+Audit" alt="Segurança" class="opacity-50">
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-500 mono">>_ Cyber Audit Tool</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">
+                        Projeto em desenvolvimento focado em análise de vulnerabilidades e Hardening de sistemas corporativos.
+                    </p>
+                    <span class="text-gray-600 font-semibold italic text-sm">Em breve...</span>
                 </div>
+
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full">
+                    <div class="mb-6 overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/400x250/111/555?text=Gaming+Engine" alt="Games" class="opacity-50">
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-500 mono">>_ Game Dev Hub</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">
+                        Portal de jogos e experimentos desenvolvidos com engines no-code para alta performance.
+                    </p>
+                    <span class="text-gray-600 font-semibold italic text-sm">Em breve...</span>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="py-6 text-center text-gray-400">
-        <p>&copy; 2024 Kovaliosky DeV. Todos os direitos reservados. Desenvolvido com paixão e dedicação.</p>
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="glass-card p-10 rounded-3xl border border-gray-800">
+                <h2 class="text-3xl font-bold mb-8 text-center">Vamos trabalhar juntos?</h2>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-mono text-accent mb-2">NOME</label>
+                            <input type="text" class="w-full bg-black border border-gray-800 rounded-lg p-3 focus:border-accent outline-none text-white">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-mono text-accent mb-2">EMAIL</label>
+                            <input type="email" class="w-full bg-black border border-gray-800 rounded-lg p-3 focus:border-accent outline-none text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-mono text-accent mb-2">MENSAGEM</label>
+                        <textarea rows="4" class="w-full bg-black border border-gray-800 rounded-lg p-3 focus:border-accent outline-none text-white"></textarea>
+                    </div>
+                    <button class="w-full bg-accent text-black font-bold py-4 rounded-lg hover:brightness-110 transition-all uppercase tracking-widest">
+                        Enviar Transmissão
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-900 text-center text-gray-600 text-sm">
+        <p class="mono">© 2026 Kovaliosky DeV // Visual Studio & Security</p>
     </footer>
 
 </body>
 </html>
-```

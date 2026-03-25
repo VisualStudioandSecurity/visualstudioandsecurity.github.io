@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# visual-studio-finance
-Este repositório é para fins de análises e aprendizados de criação de softwares e sites de alta performance, não autorizado o uso indevido dos códigos fontes.
-=======
 # 🛡️ Visual Studio And Security HUB | Enterprise Solutions
 
 ![Status](https://img.shields.io/badge/STATUS-ACTIVE-39FF14?style=for-the-badge&logo=github)

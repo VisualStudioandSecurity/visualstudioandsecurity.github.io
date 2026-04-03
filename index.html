@@ -519,6 +519,95 @@ Exposição de ID de Sessão: Cookies sem a flag HttpOnly que podem ser roubados
 Parâmetros Manipuláveis: Campos de preço ou ID de usuário que, se alterados, permitem acesso a dados de terceiros.
 
 Vazamento de Informação: Cabeçalhos X-Powered-By que revelam a versão exata do seu servidor, facilitando a busca por exploits conhecidos.
+       </article>
+     <p class="text-lg mb-6 text-gray-300 text-justify leading-relaxed">Ransomware 3.0: A Era da Extorsão Múltipla e como a Criptografia de Kernel é a Última Fronteira
+O cenário de ameaças cibernéticas em 2026 atingiu um ponto de ruptura. Casos recentes, como o ataque ao Centro Médico da Universidade do Mississippi (UMMC), mostram que o impacto não é mais apenas digital, mas humano: cirurgias canceladas e sistemas vitais offline. O que antes era uma simples criptografia de arquivos evoluiu para a Dupla Extorsão.
+O que mudou?
+Hoje, os atacantes não apenas bloqueiam seus dados; eles os roubam antes. Se você não paga, eles vazam informações sensíveis. É aqui que estratégias tradicionais de backup falham.
+
+A Solução de Camada Baixa (Kernel Level):
+Para combater isso, a implementação de defesas como o D.AMO foca na proteção a nível de Kernel do Sistema Operacional.
+
+Blindagem de Pastas: Ao contrário da criptografia comum, a criptografia em nível de pasta garante que, mesmo se o dado for exfiltrado, ele seja inútil para o invasor (ilegível).
+
+Controle de Processos: O sistema permite apenas que processos autorizados toquem nos dados. Se um ransomware tentar iniciar a criptografia, o acesso é negado na raiz.</p>
+     
+   </article>O Cerco à LAN: Como a Botnet Kimwolf Explora Dispositivos Android para Perfurar Firewalls
+
+O conceito clássico de que a rede interna (atrás do roteador) é uma zona segura acaba de ser enterrado pela botnet Kimwolf. Com mais de 2 milhões de dispositivos infectados — grande parte concentrada no Brasil — essa ameaça não apenas sequestra largura de banda, mas utiliza uma técnica diabólica de "tunelamento reverso" para invadir redes locais.
+O Vetor Silencioso: Android TV e Molduras Digitais
+O estudo da Synthient revelou que 66% das infecções vêm de aparelhos Android TV de baixo custo e molduras digitais vendidas em grandes marketplaces. Esses dispositivos chegam de fábrica com o ADB (Android Debug Bridge) ativo na porta 5555.
+
+O Erro: O ADB é uma ferramenta de diagnóstico que oferece privilégios de "superusuário" sem qualquer autenticação.
+
+A Exploração: Atacantes usam redes de proxy residenciais (como a IPIDEA) para "pular" para dentro da sua rede doméstica, acessando o endereço 127.0.0.1 ou IPs locais 192.168.x.x através de manipulação de DNS.
+
+Impacto Global
+Além de transformar sua conexão em um nó de fraude publicitária e ataques DDoS, o Kimwolf prova que o malware moderno não precisa quebrar seu firewall por fora; ele simplesmente entra "comprado" dentro de um hardware barato e abre a porta por dentro.</p>
+  </article>O Fim do Reinado? A Queda das Gigantes AISURU e Kimwolf
+    Operação internacional desmantela infraestrutura C2 responsável por ataques recordes de 31 Tbps.
+Em março de 2026, uma coalizão entre o DoJ (EUA), FBI e autoridades da Alemanha e Canadá desferiu um golpe crítico no ecossistema do cibercrime. O alvo? As botnets AISURU, Kimwolf e JackSkid. Essas redes de dispositivos IoT sequestrados não eram apenas "scripts", mas operações de Cybercrime-as-a-Service que movimentaram milhões de dólares.
+
+O que torna esse caso especial para nós, desenvolvedores, é a escala:
+
+Hipervolumetria: Ataques que atingiram 31.4 Tbps, capazes de derrubar infraestruturas de backbones inteiros em segundos.
+
+Alvos: Embora evitassem setores militares, o foco em Provedores de Internet (ISPs) e serviços de IA Generativa causou prejuízos massivos em 2025.
+
+O "Pulo do Gato": A infraestrutura não estava em servidores obscuros, mas camuflada dentro de grandes provedores de nuvem como DigitalOcean, Oracle e Microsoft.</p>
+    O Cavalo de Troia no NPM: Como o Axios foi Envenenado
+Subtítulo: Uma análise do ataque de engenharia social da UNC1069 contra o ecossistema Open-Source.
+Recentemente, a comunidade JavaScript foi abalada por um ataque sofisticado à cadeia de suprimentos (Supply Chain Attack). O alvo não foi uma falha no código, mas o próprio mantenedor do pacote Axios, Jason Saayman. Orquestrado pelo grupo norte-coreano UNC1069, o ataque resultou na publicação de versões maliciosas (1.14.1 e 0.30.4) de um dos pacotes mais usados do mundo.
+
+A Armadilha Profissional:
+Diferente de ataques de phishing comuns, os criminosos criaram um cenário de altíssima fidelidade:
+
+Clonagem de Identidade: Criaram perfis fakes de fundadores de empresas reais.
+
+Ambiente Controlado: Convidaram o mantenedor para um workspace real no Slack, com canais ativos e discussões plausíveis.
+
+O "ClickFix" no Teams: Durante uma chamada de vídeo falsa, simularam um erro de sistema que induziu a instalação de uma "atualização" de SDK. Na verdade, era o início da execução do malware.
+
+Este caso prova que a segurança de um projeto com milhões de usuários depende diretamente da higiene cibernética pessoal de quem detém as chaves do repositório.
+     </article>O Cavalo de Troia no NPM: Como o Axios foi Envenenado
+Subtítulo: Uma análise do ataque de engenharia social da UNC1069 contra o ecossistema Open-Source.
+
+Conteúdo:
+Recentemente, a comunidade JavaScript foi abalada por um ataque sofisticado à cadeia de suprimentos (Supply Chain Attack). O alvo não foi uma falha no código, mas o próprio mantenedor do pacote Axios, Jason Saayman. Orquestrado pelo grupo norte-coreano UNC1069, o ataque resultou na publicação de versões maliciosas (1.14.1 e 0.30.4) de um dos pacotes mais usados do mundo.
+
+A Armadilha Profissional:
+Diferente de ataques de phishing comuns, os criminosos criaram um cenário de altíssima fidelidade:
+
+Clonagem de Identidade: Criaram perfis fakes de fundadores de empresas reais.
+
+Ambiente Controlado: Convidaram o mantenedor para um workspace real no Slack, com canais ativos e discussões plausíveis.
+
+O "ClickFix" no Teams: Durante uma chamada de vídeo falsa, simularam um erro de sistema que induziu a instalação de uma "atualização" de SDK. Na verdade, era o início da execução do malware.
+
+Este caso prova que a segurança de um projeto com milhões de usuários depende diretamente da higiene cibernética pessoal de quem detém as chaves do repositório.</p>
+     </article>Anatomia do Payload: WAVESHAPER e SilentSiphon
+Subtítulo: Desvendando as ferramentas usadas para comprometer credenciais de desenvolvedores.
+O ataque ao Axios utilizou uma "stack" de malwares altamente especializada para extrair segredos de desenvolvimento. Uma vez que o mantenedor executou o script malicioso (via PowerShell ou AppleScript), a cadeia de infecção seguiu um fluxo devastador:
+
+WAVESHAPER V2: Um implante customizado inserido diretamente no código do Axios para infectar usuários a jusante.
+
+CosmicDoor: Um backdoor escrito em Nim (para macOS) e Go (para Windows), garantindo persistência no sistema da vítima.
+
+SilentSiphon: O "extrator" final. Este módulo foi desenhado especificamente para varrer máquinas de desenvolvedores em busca de tokens do GitHub, npm, PyPI, RubyGems e NuGet, além de senhas em navegadores.
+
+Lição Técnica: O uso de linguagens modernas como Nim e Go para criar backdoors mostra que os atacantes estão focados em evasão de antivírus tradicionais, que muitas vezes não possuem assinaturas atualizadas para essas implementações.</p>
+    </article>Além do Reset de Senha: Como Proteger sua Cadeia de Suprimentos
+Subtítulo: OIDC e Releases Imutáveis como padrão ouro na segurança Open-Source.
+O "raio de explosão" do comprometimento do Axios foi massivo devido à forma como as dependências transitivas funcionam no ecossistema moderno. Se o Axios cai, milhares de outros projetos caem junto. Após o incidente, novas diretrizes de segurança foram implementadas e servem de guia para qualquer desenvolvedor sênior:
+
+Publicação via OIDC (OpenID Connect): Em vez de armazenar tokens estáticos do npm em ambientes de CI/CD, o OIDC permite trocas de curto prazo, eliminando o risco de roubo de credenciais persistentes.
+
+Releases Imutáveis: Garantir que uma versão publicada não possa ser alterada ou "trojanizada" sem passar por novos processos de auditoria.
+
+Higiene de Dispositivos: O uso de máquinas de desenvolvimento isoladas e a desativação de ferramentas de depuração em ambientes sensíveis (como vimos no caso das botnets IoT).
+
+Na Vanguards Visual, defendemos que a segurança não é um produto, mas um processo contínuo de verificação de identidade e integridade de código.</p>ZZ
+    
     
    </div>
     </div>
